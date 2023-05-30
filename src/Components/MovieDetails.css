@@ -10,7 +10,7 @@
 }
 
 .movieDetail {
-    height:  598px;
+    height: 598px;
     width: 80%;
     /* padding-top: 10rem; */
     margin: 0rem auto;
@@ -25,28 +25,33 @@
     font-size: 2rem;
     color: #4f5b68;
 }
-.movie-ratingSpan{
+
+.movie-ratingSpan {
     color: skyblue;
     margin-left: 1rem;
 }
+
 .heading_container h1 {
     font-size: 5rem;
     font-family: 'Dosis';
     font-weight: bold;
     /* margin-top: 4rem; */
 }
-.image_container{
+
+.image_container {
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 3px solid #0c1c2c;
     padding: 1rem;
 }
-.trailer-btn{
+
+.trailer-btn {
     color: white;
     font-size: 2rem;
     margin-top: 1.3rem;
-    background-color: #dd003f;;
+    background-color: #dd003f;
+    ;
     padding: 3px 25px;
     font-weight: bold;
 
@@ -55,11 +60,13 @@
     align-items: center;
     gap: 1rem;
 
-    
+
 }
-.trailer-btn img{
+
+.trailer-btn img {
     height: 2rem !important;
 }
+
 .image_container img {
     height: 45rem;
 }
@@ -69,7 +76,7 @@
     align-items: center;
     gap: 5rem;
     margin-top: 1.4rem;
-    
+
 }
 
 
@@ -110,7 +117,8 @@
     background-color: #a6bb16;
 }
 
-.genre-sci-fi {
+.genre-sci-fi,
+.genre-scienceFiction {
     background-color: #1692bb;
 }
 
@@ -137,26 +145,50 @@
 .genre-fantasy {
     background-color: #8E24AA;
 }
-.movie-rating{
-    border-top:2px solid #4f5b68 ;
-    border-bottom:2px solid #4f5b68 ;
+
+.genre-adventure {
+    background-color: #64a25f;
+}
+
+.genre-soap {
+    background-color: #FFEB3B;
+    color: #000000;
+}
+
+.genre-mystery {
+    background-color: #51478d;
+}
+.genre-war{
+    background-color:  #B71C1C;
+}
+.genre-history{
+ background-color: #795548;   
+}
+.genre-horror{
+    background-color:  #8B0000;
+}
+.movie-rating {
+    border-top: 2px solid #4f5b68;
+    border-bottom: 2px solid #4f5b68;
     padding: 1rem;
 }
-.rating_container{
+
+.rating_container {
     display: flex;
     flex-direction: column;
     gap: 5rem;
     /* height: 100vh; */
 }
 
-.add_to_favourites_btn{
+.add_to_favourites_btn {
     display: flex;
     align-items: center;
     gap: 1.5rem;
     cursor: pointer;
-    
+
 }
-.add_to_favourites_btn button{
+
+.add_to_favourites_btn button {
     cursor: pointer;
     background: transparent;
     border: none;
@@ -167,10 +199,11 @@
     font-weight: bold;
     text-transform: uppercase;
     margin-right: 35px;
-    
-    
+
+
 }
-.add_to_favourites_btn img{
+
+.add_to_favourites_btn img {
     height: 4rem;
     border: 1px solid #dd003f;
     border-radius: 50%;
@@ -178,14 +211,15 @@
 }
 
 
-.second_container{
+.second_container {
     background-color: #020d18;
-    padding-top:8rem ;
-    padding-bottom:8rem ;
-    
-    
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+
+
 }
-.overview-container{
+
+.overview-container {
     width: 80%;
     margin: 0 auto;
     display: flex;
@@ -193,35 +227,41 @@
     justify-content: center;
     gap: 1rem;
 }
-.overview-heading{
+
+.overview-heading {
     color: white;
     font-size: 3rem;
     font-weight: bold;
-    
+
 }
-.overView{
+
+.overView {
     color: #bcbfc2;
     font-size: 2.5rem;
     word-wrap: break-word;
-    /* background-color: rebeccapurple; */   
+    /* background-color: rebeccapurple; */
 
 }
-.overview-cast{
+
+.overview-cast {
     display: flex;
     gap: 2.5rem;
 
 }
-.overviewheading-para{
+
+.overviewheading-para {
     display: flex;
     flex-direction: column;
     width: 60%;
 }
-.cast-container{
+
+.cast-container {
     color: white;
     width: 30%;
     /* padding: 1rem; */
 }
-.cast_list{
+
+.cast_list {
     display: flex;
     font-size: 1.4rem;
     align-items: center;
@@ -230,37 +270,43 @@
     padding: 0.7rem;
     gap: 1.5rem;
 }
-.person_list{
+
+.person_list {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-grow: 2;
 }
-.cast{
-    border-bottom:2px solid #F62681 ;
+
+.cast {
+    border-bottom: 2px solid #F62681;
     margin-bottom: 0.5rem;
 }
-.overview{
+
+.overview {
     border-bottom: 2px solid #FFC107;
 }
-.person_list h2{
+
+.person_list h2 {
     color: #4280bf;
-    
+
 }
-.character{
+
+.character {
     color: #abb7c4;
 }
-.cast_list img{
-    width: 5rem ;
+
+.cast_list img {
+    width: 5rem;
     height: 100%;
     object-fit: cover;
 }
 
-.review-container{
+.review-container {
     color: white;
     font-size: 2rem;
-    margin-top:3rem ;
-    
+    margin-top: 3rem;
+
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
@@ -268,7 +314,8 @@
     /* align-items: center; */
 
 }
-.review-card-container{
+
+.review-card-container {
 
     display: flex;
     flex-direction: column;
@@ -276,7 +323,7 @@
 }
 
 
-.reviews{
+.reviews {
     margin-bottom: 1rem;
     border-bottom: 0.2rem solid green;
 }

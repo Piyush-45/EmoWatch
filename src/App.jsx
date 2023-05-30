@@ -12,33 +12,41 @@ import EMOTION from "./Emotion Elixir/EMOTION";
 import News from "./News/News";
 import SignUp from "./authentication/SIgnup";
 import Login from "./authentication/Login";
-import { AuthContextProvider } from "./Context/Authcontext";
+
 import { ToastContainer } from "react-toastify";
-import SavedShows from "./authentication/SavedShows";
+// import SavedShows from "./authentication/SavedShows";
 import Searched from "./Searched/Searched";
+import SavedMovies from "./authentication/SavedMovies";
+import Account from "./authentication/Account";
 const App = () => {
   return (
     <main>
-      <AuthContextProvider>
-      <div className="main__container ">
-        {/* {/* <div className="hero_container"> */}
-        <Navbar />
-        <ToastContainer className='toast-message' autoClose={500} newestOnTop={true} theme="dark"/>
-
-      </div>
+        <div className="main__container ">
+      {/* <AuthContextProvider> */}
+          {/* {/* <div className="hero_container"> */}
+          <Navbar />
+          <ToastContainer
+            className="toast-message"
+            autoClose={500}
+            newestOnTop={true}
+            theme="dark"
+          />
+        </div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/movie/:id" element={<MovieDetails />} />
-          <Route path="/tvshow/:id" element={<TvShowDetails/>}/>
+          <Route path="/tvshow/:id" element={<TvShowDetails />} />
           {/* <Route path="/account" element={<Account/>}/> */}
-          <Route path="/emotionelixir" element={<EMOTION/>}/>
-          <Route path="/news" element={<News/>}/>
-          <Route path="/signUp" element={<SignUp/>}/>
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/savedshows" element={<SavedShows/>}/>
+          <Route path="/emotionelixir" element={<EMOTION />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/signUp" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+          {/* <Route path="/savedshows" element={<SavedShows />} /> */}
+          <Route path="/savedshows" element={<Account />} />
+          <Route path="/savedmovies" element={<SavedMovies />} />
           <Route path="/searched/:search" element={<Searched />} />
         </Routes>
-      </AuthContextProvider>
+      {/* </AuthContextProvider> */}
     </main>
   );
 };

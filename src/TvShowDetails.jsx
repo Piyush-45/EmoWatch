@@ -111,7 +111,7 @@ const TvShowDetails = () => {
               <div className="details_container">
                 <div className="heading_container">
                   <h1>
-                    {show.original_name} <span>{show.release_date}</span>
+                    {show?.original_name} <span>{show?.release_date}</span>
                   </h1>
                 </div>
                 <div className="rating_container">
@@ -119,7 +119,7 @@ const TvShowDetails = () => {
                     <p>Runtime: {show.first_air_date.slice(0, 4)} </p>
 
                     <p className="genre">
-                      {show.genres.map((genre) => (
+                      {show?.genres.map((genre) => (
                         <span
                           key={genre.id}
                           className={classNames({

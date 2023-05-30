@@ -72,7 +72,7 @@ const EMOTION = () => {
 
   return (
     <>
-      <div className="inhall emotion-container">
+      <div className={`inhall emotion-container ${selectedMood}`}>
         <h2 className="section_heading">
           Discover Movies and Shows that Match Your <span className="emotion-span">Emotions</span>  with Emotion Elixir
         </h2>
@@ -105,7 +105,7 @@ const EMOTION = () => {
         )}
         <Slider {...settings} className="moviecard_slider slider">
           {movies.map((movie) => {
-            const { id, original_title, overview, vote_average, poster_path } =
+            const { id, original_title,  vote_average, poster_path } =
               movie;
             return (
               <Moviecard

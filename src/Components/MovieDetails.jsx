@@ -3,9 +3,9 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import "./MovieDetails.css";
 import classNames from "classnames";
-import fvrt from "../images/fvrt.png";
+// import fvrt from "../images/fvrt.png";
 import play from "../images/play.png";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import ReviewsCard from "./ReviewsCard";
 import AddToFvrtBtn from "./AddToFvrtBtn";
 
@@ -18,10 +18,6 @@ const MovieDetails = () => {
   const [cast, setCast] = useState(null);
   const [reviews, setReviews] = useState(null);
 
-
-
-  const [favorites, setFavorites] = useState([]);
-  const [isFavourite, setIsFavourite] = useState(false);
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
@@ -80,23 +76,7 @@ const MovieDetails = () => {
     fetchMovieReviews();
   }, [id]);
 
-  // const movieId = doc(db, "users", `${user?.email}`)
-
-  // const saveMovie = async () => {
-  //   if (user?.email) {
-  //     setIsFavourite(!like);
-  //     setFavorites(true);
-  //     await updateDoc(movieId, {
-  //       savedMovies: arrayUnion({
-  //         id: id,
-  //         title: title,
-  //         img: image,
-  //       }),
-  //     });
-  //   } else {
-  //     alert("please login to save your recipe");
-  //   }
-  // };
+  
 
   const backgroundStyles = {
     position: "relative",
@@ -151,14 +131,19 @@ const MovieDetails = () => {
                             "genre-comedy": genre.name === "Comedy",
                             "genre-drama": genre.name === "Drama",
                             "genre-sci-fi": genre.name === "Sci-fi",
+                            "genre-scienceFiction": genre.name === "Science Fiction",
                             "genre-crime": genre.name === "Crime",
                             "genre-romance": genre.name === "Romance",
                             "genre-thriller": genre.name === "Thriller",
                             "genre-animation": genre.name === "Animation",
                             "genre-family": genre.name === "Family",
                             "genre-fantasy": genre.name === "Fantasy",
-
-                            // Add more classes for each genre
+                            "genre-war": genre.name === "War",
+                            "genre-adventure": genre.name === "Adventure",
+                            "genre-soap": genre.name === "Soap",
+                            "genre-mystery": genre.name === "Mystery",
+                            "genre-history": genre.name === "History",
+                            "genre-horror": genre.name === "Horror"
                           })}
                         >
                           {genre.name}

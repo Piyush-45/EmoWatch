@@ -35,6 +35,7 @@ export const AuthContextProvider = ({ children }) => {
     createUserWithEmailAndPassword(auth, email, password);
     setDoc(doc(db, "users", email), {
       savedShows: [],
+      savedMovies:[]
       // savedMovies:[]
     });
   }

@@ -10,7 +10,9 @@
     justify-content: center;
     gap: 3rem;
     color: white;
+    
 }
+
 
 .emotion-container p{
     font-size: 2rem;
@@ -52,3 +54,4 @@ select{
 .emotion-span{
     color: #dd003f;
 }
+

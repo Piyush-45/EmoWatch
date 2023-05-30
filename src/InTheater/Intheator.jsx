@@ -76,7 +76,7 @@ const settings={
       <h1 className="section_heading">IN THEATER</h1>
       <Slider {...settings} className="moviecard_slider slider" >
         {nowPlaying.map((movie) => {
-          const { id, original_title, overview, vote_average, poster_path } =
+          const { id, original_title,  vote_average, poster_path } =
             movie;
           return (
             <Moviecard
