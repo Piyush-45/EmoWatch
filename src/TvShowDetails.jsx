@@ -7,10 +7,17 @@ import play from "../src/images/play.png";
 import axios from "axios";
 import ReviewsCard from "./Components/ReviewsCard";
 import AddToFvrtBtn from "./Components/AddToFvrtBtn";
+import { Image, Shimmer } from 'react-shimmer'
 const TvShowDetails = () => {
   const { id } = useParams();
   const [show, setShow] = useState(null);
   const [reviews, setReviews] = useState([]);
+
+  // !To ensure that the page scrolls to the top when navigating to movie or TV show details,
+  
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
   // const[]
 
   const [cast, setCast] = useState(null);
@@ -111,7 +118,7 @@ const TvShowDetails = () => {
               <div className="details_container">
                 <div className="heading_container">
                   <h1>
-                    {show?.original_name} <span>{show?.release_date}</span>
+                    {show?.original_name} <span>{show.release_date}</span>
                   </h1>
                 </div>
                 <div className="rating_container">
@@ -191,8 +198,9 @@ const TvShowDetails = () => {
                 return (
                   <div key={person.id} className="cast_list">
                     <div className="person_image">
-                      <img
+                      <Image
                         src={`https://image.tmdb.org/t/p/w500/${person.profile_path}`}
+                        fallback={<Shimmer width={800} height={600}/>}
                         alt=""
                       />
                     </div>

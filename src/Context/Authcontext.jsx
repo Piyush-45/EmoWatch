@@ -6,14 +6,14 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { getAuth } from "firebase/auth";
 import { db } from "./firbase";
 // import { GoogleAuthProvider, getAuth } from "firebase/auth";
-import { setDoc, doc, collection } from "firebase/firestore";
+import { setDoc, doc,  } from "firebase/firestore";
 
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  signOut,
+  // signOut,
   onAuthStateChanged,
-  signInWithRedirect,
+  // signInWithRedirect,
 } from "firebase/auth";
 // import { async } from "regenerator-runtime";
 // import {doc, setDoc} from "firebase/firestore"
@@ -49,7 +49,8 @@ export const AuthContextProvider = ({ children }) => {
     toast.warn("You have logged out");
   }
 
-  // let googleProvider = new GoogleAuthProvider();
+  // }
+  // // let googleProvider = new GoogleAuthProvider();
  
 
   useEffect(() => {

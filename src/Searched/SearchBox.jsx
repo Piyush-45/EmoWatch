@@ -10,6 +10,8 @@ const SearchBox = ({onSearch}) => {
     const handleSubmit = (event) => {
       event.preventDefault();
       navigate(`/searched/${searchQuery}`);
+      
+
     };
    
     
@@ -23,7 +25,8 @@ const SearchBox = ({onSearch}) => {
               className="nav__input"
               placeholder="Search Your Favourite movies or shows here..."
               value={searchQuery}
-              onChange={(e)=> setSearchQuery(e.target.value)}
+              onChange={(e)=> setSearchQuery(e.target.value)
+              }
             />
           </form>
         </div>

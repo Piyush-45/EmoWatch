@@ -11,6 +11,7 @@ import AddToFvrtBtn from "./AddToFvrtBtn";
 
 
 const MovieDetails = () => {
+  
   // const{user} = UserAuth()
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
@@ -18,7 +19,10 @@ const MovieDetails = () => {
   const [cast, setCast] = useState(null);
   const [reviews, setReviews] = useState(null);
 
-
+  // !To ensure that the page scrolls to the top when navigating to movie or TV show details,
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
@@ -30,6 +34,8 @@ const MovieDetails = () => {
         console.log(err);
       }
     };
+
+    
     const fetchTrailerKey = async () => {
       try {
         const response = await axios.get(

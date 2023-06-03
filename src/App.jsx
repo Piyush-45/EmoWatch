@@ -18,6 +18,7 @@ import { ToastContainer } from "react-toastify";
 import Searched from "./Searched/Searched";
 import SavedMovies from "./authentication/SavedMovies";
 import Account from "./authentication/Account";
+import Footer from "./Footer/Footer";
 const App = () => {
   return (
     <main>
@@ -46,6 +47,7 @@ const App = () => {
           <Route path="/savedmovies" element={<SavedMovies />} />
           <Route path="/searched/:search" element={<Searched />} />
         </Routes>
+        <Footer/>
       {/* </AuthContextProvider> */}
     </main>
   );

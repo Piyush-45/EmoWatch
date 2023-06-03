@@ -1,4 +1,3 @@
-
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 // import searh from "../images/search1.svg";
@@ -6,9 +5,9 @@ import { UserAuth } from "../Context/Authcontext";
 import SearchBox from "../Searched/SearchBox";
 // import { useNavigate } from "react-router-dom";
 const Navbar = () => {
-  let navigate = useNavigate()
-  const { user,logOut } = UserAuth()
-  
+  let navigate = useNavigate();
+  const { user, logOut } = UserAuth();
+
   return (
     // Wrap the entire navbar in a container div
     <div className="navbar__container">
@@ -35,32 +34,26 @@ const Navbar = () => {
                   <Link to="/news">News</Link>
                 </li>
                 <li>
-                  {user?(
+                  {user ? (
                     <Link to="/savedshows" className="btn btn--signup">
-                    Saved Shows
-                  </Link>
-                  ):
-                  (<Link to='./signUp' className="btn btn--signup">
-                  Sign Up
-                </Link>)}
+                      Saved Shows
+                    </Link>
+                  ) : (
+                    <Link to="./signUp" className="btn btn--signup">
+                      Login
+                    </Link>
+                  )}
                   {/* <Link to="/signUp">Sign Up</Link> */}
                 </li>
 
                 <li>
                   {user ? (
-                    <Link
-                      className="btn btn--login"
-                      onClick={logOut}
-
-                    >
+                    <Link className="btn btn--login" onClick={logOut}>
                       Log Out
                     </Link>
                   ) : (
-                    <Link to={'/login'}
-                      className="btn btn--login"
-
-                    >
-                      Log In
+                    <Link to={"/login"} className="btn btn--login">
+                      Register
                     </Link>
                   )}
                 </li>
@@ -68,7 +61,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <SearchBox/>
+        <SearchBox />
       </nav>
     </div>
   );

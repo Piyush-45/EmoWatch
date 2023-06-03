@@ -26,7 +26,7 @@ const News = () => {
       const response = await axios.get(url);
       setBollywoodNews(response.data.articles);
       setSingleBollywoodNews(response.data.articles.slice(1, 2));
-      console.log(response.data.articles)
+      // console.log(response.data.articles)
     };
 
     fetchHollywoodNews(hollywoodNewsApi);
