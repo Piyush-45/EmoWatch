@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./News.css";
@@ -38,7 +38,7 @@ const News = () => {
       <div className="news_container">
       <h1 className="">LATEST NEWS</h1>
       <div className="main_newsContainer">
-        {singleBollywoodNews.map((item) => {
+        {singleBollywoodNews?.map((item) => {
           return (
             <>
               <div className="hero_news" key={item.id}>
