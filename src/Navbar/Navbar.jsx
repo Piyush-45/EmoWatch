@@ -15,7 +15,7 @@ const Navbar = () => {
         <div className="navbar">
           <div className="navbar__logo">
             <p>
-              Film<span>M</span>ouse
+              Elixir<span>F</span>licks
             </p>
           </div>
           <div className="nav__right">
