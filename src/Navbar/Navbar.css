@@ -45,6 +45,10 @@ span {
     /* background: red; */
     padding-top: 2rem;
 }
+.navbar img{
+    height: 7rem;
+    max-width: 100%;
+}
 
 
 .navbar__logo p {

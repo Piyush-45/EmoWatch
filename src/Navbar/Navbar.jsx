@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 // import searh from "../images/search1.svg";
 import { UserAuth } from "../Context/Authcontext";
 import SearchBox from "../Searched/SearchBox";
+import logo from "../images/logo.png"
 // import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   let navigate = useNavigate();
@@ -14,9 +15,10 @@ const Navbar = () => {
       <nav>
         <div className="navbar">
           <div className="navbar__logo">
-            <p>
+            {/* <p>
               Elixir<span>F</span>licks
-            </p>
+            </p> */}
+            <img src={logo} alt="" />
           </div>
           <div className="nav__right">
             <div className="nav__list">
