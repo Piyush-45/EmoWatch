@@ -156,4 +156,10 @@ a {
   width: 90%;
   margin: 0 auto;
 }
+.slider img{
+  width: 25rem;
+}
 
+.movie-card img{
+  width: 25rem;
+}

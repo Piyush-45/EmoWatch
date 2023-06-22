@@ -280,6 +280,13 @@
 .person_list h2{
     font-size: 1.399rem;
 }
+.person_details{
+    display: flex;
+    flex-direction: column;
+}
+.person_details p{
+    font-size: 1rem;
+}
 .cast {
     border-bottom: 2px solid #F62681;
     margin-bottom: 0.5rem;
