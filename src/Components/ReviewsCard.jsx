@@ -26,7 +26,7 @@ const ReviewsCard = ({ avatar, name, content, rating, creationDate }) => {
         </div>
         <div className="name_container">
           <h2 className="name">{name}</h2>
-          <p className="rating">{rating} /10⭐</p>
+          <p className="rating">{rating} /10 ⭐</p>
           <p className="creationdate">{creationDate}</p>
         </div>
       </div>

@@ -46,17 +46,27 @@ span {
     padding-top: 2rem;
 }
 .navbar img{
-    height: 7rem;
+    /* height: 7rem;
     max-width: 100%;
+    object-fit: cover; */
+    max-width: 100%; /* Ensure the image does not exceed its container's width */
+  height: auto; 
 }
 
-
+.navbar__logo{
+    flex-shrink: 0;
+    /* background-color: red; */
+    height: 100%;
+    width: 35vh;
+    /* display: flex; */
+    /* align-items: center */
+}
 .navbar__logo p {
     font-size: 5rem;
     font-family: Mova;
 }
 
-.nav__right {
+.nav__list {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -137,3 +147,27 @@ form {
     color: white;
 
 } */
+.mobile_menu{
+    display: none;
+}
+
+@media screen and (max-width:1200px) {
+    .nav__list ul{
+        gap: 3.5rem;
+    }
+    .nav__list{
+        font-size: 1.8rem;
+    }
+    .navbar_image{
+
+    }
+}
+
+@media screen and (max-width:860px){
+    .nav__list ul{
+        display: none;
+    }
+    .mobile_menu{
+        display: block;
+    }
+}

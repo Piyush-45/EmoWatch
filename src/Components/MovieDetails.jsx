@@ -9,14 +9,14 @@ import play from "../images/play.png";
 import ReviewsCard from "./ReviewsCard";
 import AddToFvrtBtn from "./AddToFvrtBtn";
 
-
 const MovieDetails = () => {
-  
   // const{user} = UserAuth()
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
   const [trailerKey, setTrailerKey] = useState("");
   const [cast, setCast] = useState(null);
+  const [showAllCast, setShowAllCast] = useState(false);
+  const [castLimit, setCastLimit] = useState(5);
   const [reviews, setReviews] = useState(null);
 
   // !To ensure that the page scrolls to the top when navigating to movie or TV show details,
@@ -35,7 +35,6 @@ const MovieDetails = () => {
       }
     };
 
-    
     const fetchTrailerKey = async () => {
       try {
         const response = await axios.get(
@@ -82,7 +81,10 @@ const MovieDetails = () => {
     fetchMovieReviews();
   }, [id]);
 
-  
+  const handleShowMoreCast = () => {
+    setShowAllCast(true);
+    setCastLimit(cast.length);
+  };
 
   const backgroundStyles = {
     position: "relative",
@@ -137,7 +139,8 @@ const MovieDetails = () => {
                             "genre-comedy": genre.name === "Comedy",
                             "genre-drama": genre.name === "Drama",
                             "genre-sci-fi": genre.name === "Sci-fi",
-                            "genre-scienceFiction": genre.name === "Science Fiction",
+                            "genre-scienceFiction":
+                              genre.name === "Science Fiction",
                             "genre-crime": genre.name === "Crime",
                             "genre-romance": genre.name === "Romance",
                             "genre-thriller": genre.name === "Thriller",
@@ -149,7 +152,7 @@ const MovieDetails = () => {
                             "genre-soap": genre.name === "Soap",
                             "genre-mystery": genre.name === "Mystery",
                             "genre-history": genre.name === "History",
-                            "genre-horror": genre.name === "Horror"
+                            "genre-horror": genre.name === "Horror",
                           })}
                         >
                           {genre.name}
@@ -167,7 +170,12 @@ const MovieDetails = () => {
                     </p>
                   )}
 
-                  <AddToFvrtBtn id={id} title={movie.title} img={`https://image.tmdb.org/t/p/w500/${movie?.poster_path}`} type="movie"/>
+                  <AddToFvrtBtn
+                    id={id}
+                    title={movie.title}
+                    img={`https://image.tmdb.org/t/p/w500/${movie?.poster_path}`}
+                    type="movie"
+                  />
                 </div>
               </div>
             </div>
@@ -183,26 +191,30 @@ const MovieDetails = () => {
               <div className="overView">{movie?.overview}</div>
               <div className="review-container">
                 <h1 className="overview-heading reviews">Reviews</h1>
-                <div className="review-card-container">
-                  {reviews?.map((item) => {
-                    return (
-                      <ReviewsCard
-                        key={item.id}
-                        name={item.author}
-                        content={item.content}
-                        rating={item.author_details.rating}
-                        avatar={item.author_details.avatar_path}
-                        creationDate={item.content.created_at}
-                      />
-                    );
-                  })}
-                </div>
+                {reviews && reviews.length > 0 ? (
+                  <div className="review-card-container">
+                    {reviews.map((item) => {
+                      return (
+                        <ReviewsCard
+                          key={item.id}
+                          name={item.author}
+                          content={item.content}
+                          rating={item.author_details.rating}
+                          avatar={item.author_details.avatar_path}
+                          creationDate={item.content.created_at}
+                        />
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <div className="no-review-found">No reviews found.</div>
+                )}
               </div>
             </div>
-          
+
             <div className="cast-container">
               <h1 className="overview-heading cast">CAST</h1>
-              {cast?.map((person) => {
+              {cast?.slice(0, castLimit).map((person) => {
                 return (
                   <div key={person.id} className="cast_list">
                     <div className="person_image">
@@ -218,6 +230,11 @@ const MovieDetails = () => {
                   </div>
                 );
               })}
+              {!showAllCast && cast?.length > 5 && (
+                <button className="show-more" onClick={handleShowMoreCast}>
+                  Show More Cast
+                </button>
+              )}
             </div>
           </div>
         </div>
